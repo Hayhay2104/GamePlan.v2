@@ -6,7 +6,7 @@ import '../App.css';
 const sports = [
   { name: 'Soccer', image: '/images/soccerball.png', maxPlayers: 12 },
   { name: 'Basketball', image: '/images/basketball.png', maxPlayers: 10 },
-  { name: 'Tennis', image: '/images/tennisball.png', maxPlayers: 4 },
+  { name: 'Tennis', image: '../imagesSrc/tennisball.png', maxPlayers: 4 },
 ];
 
 const Events = ({ events, onJoinEvent }) => {

@@ -13,6 +13,7 @@ const Chat = () => {
 
   return (
     <div>
+      <h1>Chat Page</h1>
       <ListGroup>
         {messages.map((msg, index) => (
           <ListGroup.Item key={index}>{msg}</ListGroup.Item>

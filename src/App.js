@@ -14,10 +14,14 @@ import AddFriend from './pages/AddFriend';
 import FriendRequests from './pages/FriendRequests';
 import Footer from './components/Footer';
 
+import soccerball from './imagesSrc/soccerball.png';
+import basketball from './imagesSrc/basketball.png';
+import tennisball from './imagesSrc/tennisball.png';
+
 const sports = [
-  { name: 'Soccer', image: '/images/soccerball.png', maxPlayers: 12 },
-  { name: 'Basketball', image: '/images/basketball.png', maxPlayers: 10 },
-  { name: 'Tennis', image: '/images/tennisball.png', maxPlayers: 4 },
+  { name: 'Soccer', image: soccerball, maxPlayers: 12 },
+  { name: 'Basketball', image: basketball, maxPlayers: 10 },
+  { name: 'Tennis', image: tennisball, maxPlayers: 4 },
 ];
 
 const defaultEvents = [
@@ -32,7 +36,7 @@ const defaultEvents = [
     privacy: 'Public',
     type: 'Friendly',
     trackScore: false,
-    image: '/images/soccerball.png'
+    image: soccerball
   },
   {
     date: '2024-07-18',
@@ -45,7 +49,7 @@ const defaultEvents = [
     privacy: 'Public',
     type: 'Friendly',
     trackScore: false,
-    image: '/images/basketball.png'
+    image: basketball
   },
   {
     date: '2024-07-20',
@@ -58,7 +62,7 @@ const defaultEvents = [
     privacy: 'Public',
     type: 'Friendly',
     trackScore: false,
-    image: '/images/tennisball.png'
+    image: tennisball
   },
 ];
 

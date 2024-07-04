@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
-import soccerball from './imagesSrc/soccerball.png';
-import basketball from './imagesSrc/basketball.png';
-import tennisball from './imagesSrc/tennisball.png';
+import soccerball from '../imagesSrc/soccerball.png';
+import basketball from '../imagesSrc/basketball.png';
+import tennisball from '../imagesSrc/tennisball.png';
 
 const sports = [
   { name: 'Soccer', image: soccerball, maxPlayers: 12 },

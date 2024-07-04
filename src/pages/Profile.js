@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 
+import profilePlaceholder from '../imagesSrc/profileplaceholder.png';
+
 const Profile = () => {
   const [editing, setEditing] = useState(false);
   const [profile, setProfile] = useState({
@@ -61,7 +63,7 @@ const Profile = () => {
         <Col md={4}>
           <Card>
             <Card.Body>
-              <Card.Img variant="top" src="/images/profileplaceholder.png" />
+              <Card.Img variant="top" src={profilePlaceholder} />
               {editing ? (
                 <div>
                   <Card.Title>
@@ -120,7 +122,7 @@ const Profile = () => {
           {profile.friends.map((friend, index) => (
             <Card key={index} className="mb-2">
               <Card.Body>
-                <img src="/images/profileplaceholder.png" alt="friend" style={{ width: '30px', marginRight: '10px' }} />
+                <img src={profilePlaceholder} alt="friend" style={{ width: '30px', marginRight: '10px' }} />
                 {friend}
               </Card.Body>
             </Card>
@@ -141,7 +143,7 @@ const Profile = () => {
               {friendRequests.map((friend, index) => (
                 <Card key={index} className="mb-2">
                   <Card.Body>
-                    <img src="/images/profileplaceholder.png" alt="friend" style={{ width: '30px', marginRight: '10px' }} />
+                    <img src={profilePlaceholder} alt="friend" style={{ width: '30px', marginRight: '10px' }} />
                     {friend}
                     <Button variant="success" className="ml-2" onClick={() => handleAcceptRequest(friend)}>Accept</Button>
                     <Button variant="danger" className="ml-2" onClick={() => handleDeclineRequest(friend)}>Decline</Button>

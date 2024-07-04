@@ -4,10 +4,14 @@ import { useNavigate } from 'react-router-dom';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
+import soccerball from '../imagesSrc/soccerball.png';
+import basketball from '../imagesSrc/basketball.png';
+import tennisball from '../imagesSrc/tennisball.png';
+
 const sports = [
-  { name: 'Soccer', image: '/images/soccerball.png', maxPlayers: 12 },
-  { name: 'Basketball', image: '/images/basketball.png', maxPlayers: 10 },
-  { name: 'Tennis', image: '../imagesSrc/tennisball.png', maxPlayers: 4 },
+  { name: 'Soccer', image: soccerball, maxPlayers: 12 },
+  { name: 'Basketball', image: basketball, maxPlayers: 10 },
+  { name: 'Tennis', image: tennisball, maxPlayers: 4 },
 ];
 
 const CreateEvent = ({ onCreateEvent }) => {
@@ -44,9 +48,12 @@ const CreateEvent = ({ onCreateEvent }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const correctedDate = new Date(selectedDate);
+    correctedDate.setHours(12, 0, 0, 0);
+  
     const newEvent = {
       ...eventDetails,
-      date: selectedDate.toISOString().split('T')[0]
+      date: correctedDate.toISOString().split('T')[0]
     };
     onCreateEvent(newEvent);
     alert('Event Created Successfully!');

@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
@@ -79,6 +78,7 @@ function App() {
   const handleCreateEvent = (newEvent) => {
     const sportDetails = {
       ...newEvent,
+      date: new Date(newEvent.date).toISOString().split('T')[0], // Ensure correct date format
       image: sports.find(sport => sport.name === newEvent.sport).image,
     };
     setEvents([...events, sportDetails]);

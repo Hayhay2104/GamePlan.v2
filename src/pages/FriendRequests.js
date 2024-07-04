@@ -5,8 +5,8 @@ import { FaCheck, FaTimes } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
 const initialFriendRequests = [
-  { name: 'Eve Adams', profilePicture: '/images/profileplaceholder.png' },
-  { name: 'Frank Wilson', profilePicture: '/images/profileplaceholder.png' },
+  { name: 'Eve Adams', profilePicture: '/imagesSrc/profileplaceholder.png' },
+  { name: 'Frank Wilson', profilePicture: '/imagesSrc/profileplaceholder.png' },
 ];
 
 const FriendRequests = () => {

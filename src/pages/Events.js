@@ -3,10 +3,14 @@ import { Container, Row, Col, Card, Button, ButtonGroup } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import '../App.css'; 
 
+import soccerball from '../imagesSrc/soccerball.png';
+import basketball from '../imagesSrc/basketball.png';
+import tennisball from '../imagesSrc/tennisball.png';
+
 const sports = [
-  { name: 'Soccer', image: '/images/soccerball.png', maxPlayers: 12 },
-  { name: 'Basketball', image: '/images/basketball.png', maxPlayers: 10 },
-  { name: 'Tennis', image: '../imagesSrc/tennisball.png', maxPlayers: 4 },
+  { name: 'Soccer', image: soccerball, maxPlayers: 12 },
+  { name: 'Basketball', image: basketball, maxPlayers: 10 },
+  { name: 'Tennis', image: tennisball, maxPlayers: 4 },
 ];
 
 const Events = ({ events, onJoinEvent }) => {
@@ -31,7 +35,7 @@ const Events = ({ events, onJoinEvent }) => {
   };
 
   const sortByPlayers = () => {
-    setFilteredEvents([...filteredEvents].sort((a, b) => a.currentPlayers - b.currentPlayers));
+    setFilteredEvents([...filteredEvents].sort((a, b) => a.participants - b.participants));
   };
 
   return (
@@ -71,11 +75,11 @@ const Events = ({ events, onJoinEvent }) => {
               <Card.Body>
                 <Card.Title>{event.sport}</Card.Title>
                 <Card.Text>
-                  <img src={event.image} alt={event.sport} style={{ width: '50px', height: '50px', marginRight: '10px' }} />
-                  Date: {new Date(event.date).toLocaleDateString()}<br />
+                  <img src={sports.find(sport => sport.name === event.sport).image} alt={event.sport} style={{ width: '50px', height: '50px', marginRight: '10px' }} />
+                  Date: {event.date}<br />
                   Time: {event.timeStart} - {event.timeEnd}<br />
                   Location: {event.location}<br />
-                  Players: {event.currentPlayers}/{event.maxPlayers}<br />
+                  Players: {event.participants}/{event.maxPlayers}<br />
                   Privacy: {event.privacy}<br />
                   Type: {event.type}<br />
                   Track Score: {event.trackScore ? 'Yes' : 'No'}

@@ -8,7 +8,10 @@ const CalendarPage = ({ joinedEvents }) => {
 
   const tileContent = ({ date, view }) => {
     if (view === 'month') {
-      const event = joinedEvents.find(e => new Date(e.date).toLocaleDateString() === date.toLocaleDateString());
+      const event = joinedEvents.find(e => {
+        const eventDate = new Date(e.date);
+        return eventDate.toISOString().split('T')[0] === date.toISOString().split('T')[0];
+      });
       if (event) {
         return (
           <p>
@@ -19,7 +22,7 @@ const CalendarPage = ({ joinedEvents }) => {
     }
     return null;
   };
-
+  
   return (
     <Container>
       <Row>
@@ -36,7 +39,10 @@ const CalendarPage = ({ joinedEvents }) => {
         <Col>
           <h2>Events on {value.toDateString()}</h2>
           {joinedEvents
-            .filter(event => new Date(event.date).toLocaleDateString() === value.toLocaleDateString())
+            .filter(event => {
+              const eventDate = new Date(event.date);
+              return eventDate.toISOString().split('T')[0] === value.toISOString().split('T')[0];
+            })
             .map((event, index) => (
               <Card key={index} className="mb-3">
                 <Card.Body>

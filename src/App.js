@@ -79,6 +79,11 @@ function App() {
     alert(`You joined ${event.sport} at ${event.timeStart}`);
   };
 
+  const handleLeaveEvent = (event) => {
+    setJoinedEvents(joinedEvents.filter(e => e.date !== event.date || e.sport !== event.sport));
+    alert(`You left ${event.sport} at ${event.timeStart}`);
+  };
+
   const handleCreateEvent = (newEvent) => {
     const sportDetails = {
       ...newEvent,
@@ -99,7 +104,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/logout" element={<Logout />} />
-          <Route path="/events" element={<Events events={events} onJoinEvent={handleJoinEvent} />} />
+          <Route path="/events" element={<Events events={events} onJoinEvent={handleJoinEvent} onLeaveEvent={handleLeaveEvent} joinedEvents={joinedEvents} />} />
           <Route path="/calendar" element={<CalendarPage joinedEvents={joinedEvents} />} />
           <Route path="/add-friend" element={<AddFriend />} />
           <Route path="/friend-requests" element={<FriendRequests />} />
@@ -108,5 +113,6 @@ function App() {
     </Router>
   );
 }
+
 
 export default App;

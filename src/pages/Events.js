@@ -13,7 +13,7 @@ const sports = [
   { name: 'Tennis', image: tennisball, maxPlayers: 4 },
 ];
 
-const Events = ({ events, onJoinEvent }) => {
+const Events = ({ events, onJoinEvent, onLeaveEvent, joinedEvents }) => {
   const [filteredEvents, setFilteredEvents] = useState(events);
   const [selectedSport, setSelectedSport] = useState('All');
 
@@ -50,7 +50,7 @@ const Events = ({ events, onJoinEvent }) => {
           </Card>
           {sports.map((sport, index) => (
             <Card key={index} onClick={() => filterBySport(sport.name)} style={{ cursor: 'pointer' }}>
-              <Card.Img variant="top" src={sport.image} alt={sport.name} />
+              <Card.Img variant="top" src={sport.image} alt={sport.name} className="sport-img" />
               <Card.Body>
                 <Card.Title>{sport.name}</Card.Title>
               </Card.Body>
@@ -76,15 +76,19 @@ const Events = ({ events, onJoinEvent }) => {
                 <Card.Title>{event.sport}</Card.Title>
                 <Card.Text>
                   <img src={sports.find(sport => sport.name === event.sport).image} alt={event.sport} style={{ width: '50px', height: '50px', marginRight: '10px' }} />
-                  Date: {event.date}<br />
-                  Time: {event.timeStart} - {event.timeEnd}<br />
-                  Location: {event.location}<br />
-                  Players: {event.participants}/{event.maxPlayers}<br />
-                  Privacy: {event.privacy}<br />
-                  Type: {event.type}<br />
-                  Track Score: {event.trackScore ? 'Yes' : 'No'}
+                  Date: <strong>{event.date}</strong><br />
+                  Time: <strong>{event.timeStart} - {event.timeEnd}</strong><br />
+                  Location: <strong>{event.location}</strong><br />
+                  Players: <strong>{event.participants}/{event.maxPlayers}</strong><br />
+                  Privacy: <strong>{event.privacy}</strong><br />
+                  Type: <strong>{event.type}</strong><br />
+                  Track Score: <strong>{event.trackScore ? 'Yes' : 'No'}</strong>
                 </Card.Text>
-                <Button variant="primary" className="mr-2" onClick={() => onJoinEvent(event)}>Join</Button>
+                {!joinedEvents.find(e => e.date === event.date && e.sport === event.sport) ? (
+                  <Button variant="primary" className="mr-2" onClick={() => onJoinEvent(event)}>Join</Button>
+                ) : (
+                  <Button variant="danger" className="mr-2" onClick={() => onLeaveEvent(event)}>Leave</Button>
+                )}
                 <Button variant="secondary">Share</Button>
               </Card.Body>
             </Card>

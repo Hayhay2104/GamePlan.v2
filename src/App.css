@@ -35,6 +35,12 @@ html, body {
   color: white;
 }
 
+.sport-img {
+  width: 100px;
+  height: 100px;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

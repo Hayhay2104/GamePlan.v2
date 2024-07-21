@@ -1,4 +1,4 @@
-GitHub Pages Link: https://hayhay2104.github.io/gameplan/
+GitHub Pages Link: https://hayhay2104.github.io/GamePlan.v2/
 
 # Getting Started with Create React App
 

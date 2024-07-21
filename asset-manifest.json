@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/GamePlan.v2/v2/static/css/main.54693a56.css",
-    "main.js": "/GamePlan.v2/v2/static/js/main.ed58b5db.js",
-    "static/media/basketball.png": "/GamePlan.v2/v2/static/media/basketball.7bb00f42580242fe2cad.png",
-    "static/media/tennisball.png": "/GamePlan.v2/v2/static/media/tennisball.5a120be19b6a7d8af138.png",
-    "static/media/soccerball.png": "/GamePlan.v2/v2/static/media/soccerball.40360d52ad87c7d394ef.png",
-    "static/media/logo.png": "/GamePlan.v2/v2/static/media/logo.433d2834cbc1eec36708.png",
-    "static/media/profileplaceholder.png": "/GamePlan.v2/v2/static/media/profileplaceholder.b5cef4361f21b7c66473.png",
-    "index.html": "/GamePlan.v2/v2/index.html",
-    "main.54693a56.css.map": "/GamePlan.v2/v2/static/css/main.54693a56.css.map",
-    "main.ed58b5db.js.map": "/GamePlan.v2/v2/static/js/main.ed58b5db.js.map"
+    "main.css": "/GamePlan.v2/static/css/main.54693a56.css",
+    "main.js": "/GamePlan.v2/static/js/main.65bf9a8e.js",
+    "static/media/basketball.png": "/GamePlan.v2/static/media/basketball.7bb00f42580242fe2cad.png",
+    "static/media/tennisball.png": "/GamePlan.v2/static/media/tennisball.5a120be19b6a7d8af138.png",
+    "static/media/soccerball.png": "/GamePlan.v2/static/media/soccerball.40360d52ad87c7d394ef.png",
+    "static/media/logo.png": "/GamePlan.v2/static/media/logo.433d2834cbc1eec36708.png",
+    "static/media/profileplaceholder.png": "/GamePlan.v2/static/media/profileplaceholder.b5cef4361f21b7c66473.png",
+    "index.html": "/GamePlan.v2/index.html",
+    "main.54693a56.css.map": "/GamePlan.v2/static/css/main.54693a56.css.map",
+    "main.65bf9a8e.js.map": "/GamePlan.v2/static/js/main.65bf9a8e.js.map"
   },
   "entrypoints": [
     "static/css/main.54693a56.css",
-    "static/js/main.ed58b5db.js"
+    "static/js/main.65bf9a8e.js"
   ]
 }

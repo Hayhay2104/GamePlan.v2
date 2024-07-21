@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Button, ButtonGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { FaCalendarAlt, FaUsers, FaPlus } from 'react-icons/fa';
 import '../App.css'; 
 
 import soccerball from '../imagesSrc/soccerball.png';
@@ -64,9 +65,15 @@ const Events = ({ events, onJoinEvent, onLeaveEvent, joinedEvents }) => {
             </Col>
             <Col className="text-right">
               <ButtonGroup>
-                <Button variant="primary" onClick={sortByDate} className="btn-spacing">Sort by Date</Button>
-                <Button variant="primary" onClick={sortByPlayers} className="btn-spacing">Sort by Players</Button>
-                <Button variant="dark" as={Link} to="/create-event">Create Event</Button>
+                <Button variant="primary" onClick={sortByDate} className="btn-spacing">
+                  <FaCalendarAlt className="mr-2" /> Sort by Date
+                </Button>
+                <Button variant="primary" onClick={sortByPlayers} className="btn-spacing">
+                  <FaUsers className="mr-2" /> Sort by Players
+                </Button>
+                <Button variant="success" as={Link} to="/create-event" className="btn-spacing">
+                  <FaPlus className="mr-2" /> Create Event
+                </Button>
               </ButtonGroup>
             </Col>
           </Row>

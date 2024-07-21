@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Button, Container } from 'react-bootstrap';
+import { Form, Button, Container, Row, Col, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
@@ -64,122 +64,146 @@ const CreateEvent = ({ onCreateEvent }) => {
     navigate('/events');
   };
 
+  const renderTooltip = (text) => (
+    <Tooltip>{text}</Tooltip>
+  );
+
   return (
     <Container>
       <h1>Create Event Page</h1>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="formSport">
-          <Form.Label>Sport</Form.Label>
-          <Form.Control
-            as="select"
-            name="sport"
-            value={eventDetails.sport}
-            onChange={handleChange}
-          >
-            {sports.map((sport, index) => (
-              <option key={index} value={sport.name}>{sport.name}</option>
-            ))}
-          </Form.Control>
-        </Form.Group>
+      <Form onSubmit={handleSubmit} className="d-flex flex-column align-items-center">
+        <OverlayTrigger placement="right" overlay={renderTooltip("Select the sport for the event.")}>
+          <Form.Group controlId="formSport" className="w-75">
+            <Form.Label>Sport</Form.Label>
+            <Form.Control
+              as="select"
+              name="sport"
+              value={eventDetails.sport}
+              onChange={handleChange}
+            >
+              {sports.map((sport, index) => (
+                <option key={index} value={sport.name}>{sport.name}</option>
+              ))}
+            </Form.Control>
+          </Form.Group>
+        </OverlayTrigger>
 
-        <Form.Group controlId="formCurrentPlayers">
-          <Form.Label>Current Players</Form.Label>
-          <Form.Control
-            type="number"
-            name="currentPlayers"
-            value={eventDetails.currentPlayers}
-            onChange={handleChange}
-          />
-        </Form.Group>
+        <OverlayTrigger placement="right" overlay={renderTooltip("Enter the current number of players.")}>
+          <Form.Group controlId="formCurrentPlayers" className="w-75">
+            <Form.Label>Current Players</Form.Label>
+            <Form.Control
+              type="number"
+              name="currentPlayers"
+              value={eventDetails.currentPlayers}
+              onChange={handleChange}
+            />
+          </Form.Group>
+        </OverlayTrigger>
 
-        <Form.Group controlId="formMaxPlayers">
-          <Form.Label>Max Players</Form.Label>
-          <Form.Control
-            type="number"
-            name="maxPlayers"
-            value={eventDetails.maxPlayers}
-            onChange={handleChange}
-          />
-        </Form.Group>
+        <OverlayTrigger placement="right" overlay={renderTooltip("Enter the maximum number of players.")}>
+          <Form.Group controlId="formMaxPlayers" className="w-75">
+            <Form.Label>Max Players</Form.Label>
+            <Form.Control
+              type="number"
+              name="maxPlayers"
+              value={eventDetails.maxPlayers}
+              onChange={handleChange}
+            />
+          </Form.Group>
+        </OverlayTrigger>
 
-        <Form.Group controlId="formLocation">
-          <Form.Label>Location</Form.Label>
-          <Form.Control
-            type="text"
-            name="location"
-            value={eventDetails.location}
-            onChange={handleChange}
-          />
-        </Form.Group>
+        <OverlayTrigger placement="right" overlay={renderTooltip("Enter the location of the event.")}>
+          <Form.Group controlId="formLocation" className="w-75">
+            <Form.Label>Location</Form.Label>
+            <Form.Control
+              type="text"
+              name="location"
+              value={eventDetails.location}
+              onChange={handleChange}
+            />
+          </Form.Group>
+        </OverlayTrigger>
 
-        <Form.Group controlId="formTimeStart">
-          <Form.Label>Start Time</Form.Label>
-          <Form.Control
-            type="time"
-            name="timeStart"
-            value={eventDetails.timeStart}
-            onChange={handleChange}
-          />
-        </Form.Group>
+        <OverlayTrigger placement="right" overlay={renderTooltip("Select the start time for the event.")}>
+          <Form.Group controlId="formTimeStart" className="w-75">
+            <Form.Label>Start Time</Form.Label>
+            <Form.Control
+              type="time"
+              name="timeStart"
+              value={eventDetails.timeStart}
+              onChange={handleChange}
+            />
+          </Form.Group>
+        </OverlayTrigger>
 
-        <Form.Group controlId="formTimeEnd">
-          <Form.Label>End Time</Form.Label>
-          <Form.Control
-            type="time"
-            name="timeEnd"
-            value={eventDetails.timeEnd}
-            onChange={handleChange}
-          />
-        </Form.Group>
+        <OverlayTrigger placement="right" overlay={renderTooltip("Select the end time for the event.")}>
+          <Form.Group controlId="formTimeEnd" className="w-75">
+            <Form.Label>End Time</Form.Label>
+            <Form.Control
+              type="time"
+              name="timeEnd"
+              value={eventDetails.timeEnd}
+              onChange={handleChange}
+            />
+          </Form.Group>
+        </OverlayTrigger>
 
-        <Form.Group controlId="formPrivacy">
-          <Form.Label>Privacy</Form.Label>
-          <Form.Control
-            as="select"
-            name="privacy"
-            value={eventDetails.privacy}
-            onChange={handleChange}
-          >
-            <option value="Public">Public</option>
-            <option value="Private">Private</option>
-          </Form.Control>
-        </Form.Group>
+        <OverlayTrigger placement="right" overlay={renderTooltip("Select the privacy level for the event.")}>
+          <Form.Group controlId="formPrivacy" className="w-75">
+            <Form.Label>Privacy</Form.Label>
+            <Form.Control
+              as="select"
+              name="privacy"
+              value={eventDetails.privacy}
+              onChange={handleChange}
+            >
+              <option value="Public">Public</option>
+              <option value="Private">Private</option>
+            </Form.Control>
+          </Form.Group>
+        </OverlayTrigger>
 
-        <Form.Group controlId="formType">
-          <Form.Label>Type</Form.Label>
-          <Form.Control
-            as="select"
-            name="type"
-            value={eventDetails.type}
-            onChange={handleChange}
-          >
-            <option value="Friendly">Friendly</option>
-            <option value="Competitive">Competitive</option>
-          </Form.Control>
-        </Form.Group>
+        <OverlayTrigger placement="right" overlay={renderTooltip("Select the type of event.")}>
+          <Form.Group controlId="formType" className="w-75">
+            <Form.Label>Type</Form.Label>
+            <Form.Control
+              as="select"
+              name="type"
+              value={eventDetails.type}
+              onChange={handleChange}
+            >
+              <option value="Friendly">Friendly</option>
+              <option value="Competitive">Competitive</option>
+            </Form.Control>
+          </Form.Group>
+        </OverlayTrigger>
 
-        <Form.Group controlId="formTrackScore">
-          <Form.Check
-            type="checkbox"
-            label="Track Score"
-            name="trackScore"
-            checked={eventDetails.trackScore}
-            onChange={handleCheckboxChange}
-          />
-        </Form.Group>
+        <OverlayTrigger placement="right" overlay={renderTooltip("Check if you want to track the score.")}>
+          <Form.Group controlId="formTrackScore" className="w-75">
+            <Form.Check
+              type="checkbox"
+              label="Track Score"
+              name="trackScore"
+              checked={eventDetails.trackScore}
+              onChange={handleCheckboxChange}
+            />
+          </Form.Group>
+        </OverlayTrigger>
 
-        <Form.Group controlId="formDate">
-          <Form.Label>Select Date</Form.Label>
-          <Calendar
-            onChange={setSelectedDate}
-            value={selectedDate}
-          />
-        </Form.Group>
+        <OverlayTrigger placement="right" overlay={renderTooltip("Select the date for the event.")}>
+          <Form.Group controlId="formDate" className="w-75">
+            <Form.Label>Select Date</Form.Label>
+            <Calendar
+              onChange={setSelectedDate}
+              value={selectedDate}
+            />
+          </Form.Group>
+        </OverlayTrigger>
 
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" className="m-2">
           Confirm
         </Button>
-        <Button variant="secondary" onClick={handleCancel} className="ml-2">
+        <Button variant="secondary" onClick={handleCancel} className="m-2">
           Cancel
         </Button>
       </Form>

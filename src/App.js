@@ -12,6 +12,7 @@ import Events from './pages/Events';
 import CalendarPage from './pages/CalendarPage';
 import AddFriend from './pages/AddFriend';
 import FriendRequests from './pages/FriendRequests';
+import SearchResults from './pages/SearchResults'; // Add this import
 import Footer from './components/Footer';
 
 import soccerball from './imagesSrc/soccerball.png';
@@ -108,11 +109,11 @@ function App() {
           <Route path="/calendar" element={<CalendarPage joinedEvents={joinedEvents} />} />
           <Route path="/add-friend" element={<AddFriend />} />
           <Route path="/friend-requests" element={<FriendRequests />} />
+          <Route path="/search" element={<SearchResults events={events} />} /> {/* Add this route */}
         </Routes>
       </Layout>
     </Router>
   );
 }
-
 
 export default App;

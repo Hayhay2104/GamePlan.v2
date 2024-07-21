@@ -27,12 +27,19 @@ const CalendarPage = ({ joinedEvents }) => {
     <Container>
       <Row>
         <Col>
-          <h1>My Calendar</h1>
-          <Calendar
-            onChange={setValue}
-            value={value}
-            tileContent={tileContent}
-          />
+          <h1 className="text-center">My Calendar</h1>
+        </Col>
+      </Row>
+      <Row className="justify-content-center">
+        <Col xs={12} md={8} lg={6}>
+          <div className="d-flex justify-content-center">
+            <Calendar
+              onChange={setValue}
+              value={value}
+              tileContent={tileContent}
+              className="w-100" // Add a custom class to make the calendar full width
+            />
+          </div>
         </Col>
       </Row>
       <Row className="mt-4">

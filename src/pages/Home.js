@@ -29,7 +29,7 @@ const Home = () => {
       </p>
       <Button variant="primary" as={Link} to="/events">Play</Button>
 
-      {/* Features Section */}
+      {}
       <Row className="mt-5">
         <Col>
           <h2>Why Choose GamePlan?</h2>
@@ -64,10 +64,10 @@ const Home = () => {
             </Card.Body>
           </Card>
         </Col>
-        {/* Repeat for other events */}
+        {}
       </Row>
 
-      {/* Testimonials Section */}
+      {}
       <Row className="mt-5">
         <Col>
           <h2>What Our Users Say</h2>

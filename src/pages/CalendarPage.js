@@ -37,7 +37,7 @@ const CalendarPage = ({ joinedEvents }) => {
               onChange={setValue}
               value={value}
               tileContent={tileContent}
-              className="w-100" // Add a custom class to make the calendar full width
+              className="w-100" //calendar width
             />
           </div>
         </Col>
